@@ -1,0 +1,130 @@
+ body {
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #video-container {
+      position: relative;
+      margin-top: 500px;
+      /* Adjust top margin for the video container */
+    }
+
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    #moving-image {
+      position: absolute;
+      margin-top: -450px;
+      /* Adjust top position */
+      right: 25px;
+      /* Adjust left position */
+      max-width: 700px;
+      /* Set max width if needed */
+      max-height: 50px;
+      /* Set max height if needed */
+    }
+
+ #moving-imageback {
+      position: absolute;
+      margin-top: -450px;
+      /* Adjust top position */
+      left: 25px;
+      /* Adjust left position */
+      max-width: 800px;
+      /* Set max width if needed */
+      height: 75px;
+      /* Set max height if needed */
+    }
+    .custom-button {
+      position: absolute;
+      cursor: pointer;
+      border-radius: 10px;
+      /* Optional: Add rounded corners */
+      display: flex;
+      align-items: center;
+      font-size: 35px;
+      /* Adjust font size as needed */
+      border: none;
+
+      /* Add gradient background */
+      background: linear-gradient(to right,
+          #003366,
+          #3232b8);
+      /* Adjust colors as needed */
+      color: #ffffff;
+      /* Text color */
+      padding: 45px 0;
+      /* Fixed padding for both buttons */
+      width: 800px;
+      /* Fixed width for all buttons */
+      justify-content: right;
+      /* Center the content horizontally */
+    }
+
+    #custom-button1 {
+      top: -100px;
+      /* Adjust top position */
+      right: 160px;
+      /* Adjust left position */
+    }
+
+    #custom-button2 {
+      top: 50px;
+      /* Adjust top position */
+      right: 160px;
+      /* Adjust left position */
+    }
+
+    #custom-button3 {
+      top: 200px;
+      /* Adjust top position */
+      right: 160px;
+      /* Adjust left position */
+    }
+
+    .button-title {
+      position: absolute;
+      top: -300px;
+      /* Adjust top position for the title */
+      right: 250px;
+      /* Adjust left position for the title */
+      color: #043676;
+      /* Title text color */
+      font-size: 100px;
+      /* Title font size */
+      font-weight: bold;
+    }
+
+    .button-subtext {
+      position: absolute;
+      top: -200px;
+      /* Adjust top position for the subtext */
+      right: 260px;
+      /* Adjust left position for the subtext */
+      color: #043676;
+      /* Subtext color */
+      font-size: 25px;
+      font-weight: semi bold;
+    }
+
+    #custom-buttonAR img,
+    #custom-button1 img {
+      margin-right: 25px;
+      margin-left: 25px;
+    }
+    #custom-button2 img {
+      margin-right: 25px;
+      margin-left: 25px;
+    }
+    #custom-button3 img {
+      margin-right: 25px;
+      margin-left: 25px;
+    }

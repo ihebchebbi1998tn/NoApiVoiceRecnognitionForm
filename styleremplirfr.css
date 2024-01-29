@@ -1,0 +1,222 @@
+ body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      #video-container {
+        position: relative;
+        margin-top: 500px; /* Adjust top margin for the video container */
+      }
+
+      #video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+    #moving-image {
+      position: absolute;
+      margin-top: -450px;
+      /* Adjust top position */
+      right: 25px;
+      /* Adjust left position */
+      max-width: 700px;
+      /* Set max width if needed */
+      max-height: 50px;
+      /* Set max height if needed */
+    }
+
+ #moving-imageback {
+      position: absolute;
+      margin-top: -450px;
+      /* Adjust top position */
+      left: 25px;
+      /* Adjust left position */
+      max-width: 800px;
+      /* Set max width if needed */
+      height: 75px;
+      /* Set max height if needed */
+    }
+      .custom-button {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 10px; /* Optional: Add rounded corners */
+        display: flex;
+        align-items: center;
+        font-size: 25px; /* Adjust font size as needed */
+        border: none;
+        /* Add gradient background */
+        background: linear-gradient(to right, #01815b, #87d8b9);
+        /* Adjust colors as needed */
+        color: #ffffff; /* Text color */
+        padding: 15px 0; /* Fixed padding for both buttons */
+        width: 700px; /* Fixed width for all buttons */
+
+        justify-content:left; /* Center the content horizontally */
+      }
+
+      .custom-buttonOK {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 10px; /* Optional: Add rounded corners */
+        display: flex;
+        align-items: center;
+        font-size: 25px; /* Adjust font size as needed */
+        border: none;
+        /* Add gradient background */
+        background: linear-gradient(to right,
+          #003366,
+          #3232b8);
+        /* Adjust colors as needed */
+        color: #ffffff; /* Text color */
+        padding: 20px 0; /* Fixed padding for both buttons */
+        width: 200px; /* Fixed width for all buttons */
+
+        justify-content: right; /* Center the content horizontally */
+      }
+
+      #custom-buttonOK {
+        top: 325px; /* Adjust top position */
+        right: 680px; /* Adjust left position */
+      }
+
+      .input-field-container3 {
+        position: absolute;
+        top: 175px; /* Adjust top position */
+        right: 220px; /* Adjust left position */
+        display: flex;
+        align-items: center;
+      }
+
+      
+   
+      
+      .input-field-container1 {
+        position: absolute;
+        top: 5px; /* Adjust top position */
+        right: 220px; /* Adjust left position */
+        display: flex;
+        align-items: center;
+      }
+      
+        .input-field-container2 {
+        position: absolute;
+        top: 90px; /* Adjust top position */
+        right: 220px; /* Adjust left position */
+        display: flex;
+        align-items: center;
+      }
+      
+      
+
+      .input-field {
+        width: 600px; /* Set width for the input field */
+        padding: 15px;
+        font-size: 35px;
+        border: none;
+        border-radius: 10px;
+        margin-right: 15px; /* Adjust margin as needed */
+        text-align: left;
+      }
+
+      #custom-button1 {
+        top: -100px;
+      /* Adjust top position */
+      right: 220px;
+      /* Adjust left position */
+      }
+
+      #custom-button2 {
+        top: 220px; /* Adjust top position */
+        right: 220px; /* Adjust left position */
+      }
+
+       .button-title {
+      position: absolute;
+      top: -300px;
+      /* Adjust top position for the title */
+      right: 250px;
+      /* Adjust left position for the title */
+      color: #043676;
+      /* Title text color */
+      font-size: 100px;
+      /* Title font size */
+      font-weight: bold;
+    }
+
+    .button-subtext {
+      position: absolute;
+      top: -200px;
+      /* Adjust top position for the subtext */
+      right: 260px;
+      /* Adjust left position for the subtext */
+      color: #043676;
+      /* Subtext color */
+      font-size: 25px;
+      font-weight: semi bold;
+    }
+
+
+      #custom-buttonAR img,
+      #custom-button1 img {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+      #custom-buttonOK img {
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      @keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px); /* Adjust the distance to move left */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#custom-buttonOK img {
+  margin-right: 15px;
+  margin-left: 15px;
+  animation: moveLeft 1s infinite; /* Adjust the duration as needed */
+}
+
+     /* Custom styling for the year and month input fields */
+    .custom-year-month-input {
+      width: 300px;
+      padding: 10px;
+      font-size: 35px;
+      border: 1;
+      border-radius: 5px;
+      margin-right: 15px;
+      text-align: center;
+    }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      z-index: 1000;
+    }
+    
+    
+    #popup video {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
