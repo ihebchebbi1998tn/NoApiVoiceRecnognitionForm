@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+        <link rel="stylesheet" href="Bornestyle/styleremplirar.css">
+
+  </head>
+
+ <body>
+    
+    <div id="video-container">
+        <video id="video-background" autoplay loop muted>
+            <source src="rs/remplirmenu.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <div id="content">
+            <img id="moving-image" src="Images/TransparentLogo.png" alt="Moving Image" />
+            <a href="index.html">
+                <img id="moving-imageback" src="Images/back.png" alt="Moving Image" />
+            </a>
+            <div class="button-title">Borne CBS-RH</div>
+            <div class="button-subtext">القائمة</div>
+
+            <button class="custom-button" id="custom-button1">
+          <span id="button-text"></span>
+          <img src="Images/tick.png" alt="Icon" width="40" height="40" />
+        </button>
+
+            <div class="input-field-container1">
+                <input type="text" class="input-field" id="name" placeholder=": الإسم واللقب" />
+                <img src="Images/micro.png" id="get_nom" alt="Icon" width="40" height="40" />
+            </div>
+
+            <div class="input-field-container2">
+                <input type="text" class="input-field" id="matricule" placeholder=": رقم التسجيل" />
+                <img src="Images/micro.png" id="get_matricule" alt="Icon" width="40" height="40" />
+            </div>
+
+   <div class="input-field-container3">
+    <input type="text" class="custom-year-month-input" id="year" placeholder="السنة" />
+                    <img src="Images/micro.png" id="get_year" alt="Icon" width="35" height="35" />
+
+    <input type="text" class="custom-year-month-input" id="month" placeholder="شهر" />
+                        <img src="Images/micro.png" id="get_month" alt="Icon" width="35" height="35" />
+
+  </div>
+            <button class="custom-buttonOK" id="custom-buttonOK" >
+                <span id="button-text"> التالي</span>
+                <img src="Images/next.png" alt="Icon" width="40" height="40" />
+            </button>
+        </div>
+    </div>
+    
+     <div id="popup">
+    <h3> ....أنا أستمع</h3>
+    <video autoplay loop muted>
+      <source src="rs/talkhd.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+   <script>
+    document.getElementById('get_nom').addEventListener('click', function() {
+      document.getElementById('popup').style.display = 'block';
+
+      setTimeout(function() {
+        document.getElementById('popup').style.display = 'none';
+      }, 4000);
+    });
+  </script>
+ <script>
+  document.getElementById('get_nom').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'block';
+
+    setTimeout(function() {
+      document.getElementById('popup').style.display = 'none';
+    }, 5000);
+  });
+
+  document.getElementById('get_matricule').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'block';
+
+    setTimeout(function() {
+      document.getElementById('popup').style.display = 'none';
+    }, 5000);
+  });
+
+  document.getElementById('get_year').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'block';
+
+    setTimeout(function() {
+      document.getElementById('popup').style.display = 'none';
+    }, 5000);
+  });
+
+  document.getElementById('get_month').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'block';
+
+    setTimeout(function() {
+      document.getElementById('popup').style.display = 'none';
+    }, 5000);
+  });
+
+  // Check if SpeechRecognition is supported by the browser
+  if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+    // Create an instance of SpeechRecognition for the 'name' input
+    const nameRecognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    // Set the recognition language to Arabic
+    nameRecognition.lang = 'ar-TN';
+
+    // Variable to track the last time speech was detected for name
+    let lastNameSpeechTime = Date.now();
+
+    // Handle the result event for name
+    nameRecognition.onresult = function(event) {
+      const result = event.results[0][0].transcript;
+      const name = document.getElementById('name');
+
+      // Set the recognized text as the value of the input field
+      name.value = result;
+
+      // Update the last speech time for name
+      lastNameSpeechTime = Date.now();
+    };
+
+    nameRecognition.onerror = function(event) {
+      console.error('Speech recognition error occurred for name:', event.error);
+    };
+
+    // Handle the end event for name
+    nameRecognition.onend = function() {
+      const elapsedTime = Date.now() - lastNameSpeechTime;
+
+      if (elapsedTime >= 3000) {
+        nameRecognition.start();
+      }
+    };
+
+    const nameStartButton = document.getElementById('get_nom');
+    nameStartButton.addEventListener('click', function() {
+      nameRecognition.start();
+    });
+
+    // Create an instance of SpeechRecognition for the 'matricule' input
+    const matriculeRecognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    // Set the recognition language to Arabic
+    matriculeRecognition.lang = 'ar-TN';
+
+    // Variable to track the last time speech was detected for matricule
+    let lastMatriculeSpeechTime = Date.now();
+
+    // Handle the result event for matricule
+    matriculeRecognition.onresult = function(event) {
+      const result = event.results[0][0].transcript;
+      const matricule = document.getElementById('matricule');
+
+      // Set the recognized text as the value of the input field
+      matricule.value = result;
+
+      // Update the last speech time for matricule
+      lastMatriculeSpeechTime = Date.now();
+    };
+
+    matriculeRecognition.onerror = function(event) {
+      console.error('Speech recognition error occurred for matricule:', event.error);
+    };
+
+    // Handle the end event for matricule
+    matriculeRecognition.onend = function() {
+      const elapsedTime = Date.now() - lastMatriculeSpeechTime;
+
+      if (elapsedTime >= 3000) {
+        matriculeRecognition.start();
+      }
+    };
+
+    const matriculeStartButton = document.getElementById('get_matricule');
+    matriculeStartButton.addEventListener('click', function() {
+      matriculeRecognition.start();
+    });
+
+    // Create an instance of SpeechRecognition for the 'year' input
+    const yearRecognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    // Set the recognition language to Arabic
+    yearRecognition.lang = 'ar-TN';
+
+    // Variable to track the last time speech was detected for year
+    let lastYearSpeechTime = Date.now();
+
+    // Handle the result event for year
+    yearRecognition.onresult = function(event) {
+      const result = event.results[0][0].transcript;
+      const year = document.getElementById('year');
+
+      // Set the recognized text as the value of the input field
+      year.value = result;
+
+      // Update the last speech time for year
+      lastYearSpeechTime = Date.now();
+    };
+
+    yearRecognition.onerror = function(event) {
+      console.error('Speech recognition error occurred for year:', event.error);
+    };
+
+    // Handle the end event for year
+    yearRecognition.onend = function() {
+      const elapsedTime = Date.now() - lastYearSpeechTime;
+
+      if (elapsedTime >= 3000) {
+        yearRecognition.start();
+      }
+    };
+
+    const yearStartButton = document.getElementById('get_year');
+    yearStartButton.addEventListener('click', function() {
+      yearRecognition.start();
+    });
+
+    // Create an instance of SpeechRecognition for the 'month' input
+    const monthRecognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    // Set the recognition language to Arabic
+    monthRecognition.lang = 'ar-TN';
+
+    // Variable to track the last time speech was detected for month
+    let lastMonthSpeechTime = Date.now();
+
+    // Handle the result event for month
+    monthRecognition.onresult = function(event) {
+      const result = event.results[0][0].transcript;
+      const month = document.getElementById('month');
+
+      // Set the recognized text as the value of the input field
+      month.value = result;
+
+      // Update the last speech time for month
+      lastMonthSpeechTime = Date.now();
+    };
+
+    monthRecognition.onerror = function(event) {
+      console.error('Speech recognition error occurred for month:', event.error);
+    };
+
+    // Handle the end event for month
+    monthRecognition.onend = function() {
+      const elapsedTime = Date.now() - lastMonthSpeechTime;
+
+      if (elapsedTime >= 3000) {
+        monthRecognition.start();
+      }
+    };
+
+    const monthStartButton = document.getElementById('get_month');
+    monthStartButton.addEventListener('click', function() {
+      monthRecognition.start();
+    });
+  } else {
+    console.error('Speech recognition not supported by the browser.');
+  }
+</script>
+<script>
+    document.getElementById('custom-buttonOK').addEventListener('click', function() {
+        //window.location.href = 'MerciAR.html';
+    });
+</script>
+<script>
+    // Retrieve the text from the URL parameters
+      const piecedemander = new URLSearchParams(window.location.search);
+      const buttonText = piecedemander.get('text');
+
+      // Use the buttonText to update the button text
+      const buttonSpan = document.getElementById('button-text');
+      buttonSpan.textContent = buttonText;
+</script>
+<script>
+     document.getElementById("custom-buttonOK").addEventListener("click", function (event) {
+        event.preventDefault();  // Prevent the form from submitting
+
+
+        const pieceValue = document.getElementById("button-text").textContent;
+        const nameValue = document.getElementById("name").value;
+        const matriculeValue = document.getElementById("matricule").value;
+        const yearValue = document.getElementById("year").value;
+        const monthValue = document.getElementById("month").value;
+        
+        console.log("Piece:", pieceValue);
+        console.log("Name:", nameValue);
+        console.log("Matricule:", matriculeValue);
+        console.log("Year:", yearValue);
+        console.log("Month:", monthValue);
+
+            window.location.href = `sendemail.php?&text=${pieceValue}&name=${nameValue}&matricule=${matriculeValue}&year=${yearValue}&month=${monthValue}`;;
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+
+          <link rel="stylesheet" href="Bornestyle/stylemercifr.css">
+
+  </head>
+
+ <body>
+      <script>
+		// Wait for 7 seconds and then redirect to formulaire.html
+		setTimeout(function() {
+			window.location.href = 'MerciFR.html';
+		}, 7000);
+	</script>
+    <div id="video-container">
+        <video id="video-background" autoplay loop muted>
+            <source src="rs/thankspage.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    <audio src="rs/thankyou.mp3" autoplay></audio>
+
+        <div id="content">
+            <img id="moving-image" src="Images/TransparentLogo.png" alt="Moving Image" />
+            <a href="index.html">
+                <img id="moving-imageback" src="Images/back.png" alt="Moving Image" />
+            </a>
+      
+            
+           
+
+<div class="button-title">Nous avons <br>reçu votre demande.</div>
+    </div>
+    
+ 
+   
+ <script>
+   // Play audio function
+        function playAudio(audio) {
+            audio.pause();
+            audio.currentTime = 0;
+            audio.play();
+        }
+</script>
+
+</body>
+</html>

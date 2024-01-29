@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+           <link rel="stylesheet" href="Bornestyle/stylemenufr.css">
+
+</head>
+
+<body>
+  <div id="video-container">
+    <video id="video-background" autoplay loop muted>
+      <source src="rs/menu.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div id="content">
+      <img id="moving-image" src="Images/TransparentLogo.png" alt="Moving Image" />
+<a href="index.html">
+  <img id="moving-imageback" src="Images/back.png" alt="Moving Image" />
+</a>
+      <div class="button-title">Borne CBS-RH</div>
+      <div class="button-subtext">Menu</div>
+
+      <button class="custom-button" id="custom-button1">
+        <img src="Images/Icondemandedefichedepaie.png" alt="Icon" width="40" height="40" />
+        <span id="button-text">Demande de fiche de paie</span>
+      </button>
+      <button class="custom-button" id="custom-button2">
+        <img src="Images/IconWork.png" alt="Icon" width="40" height="40" />
+        <span id="button-text">Demande d’une attestation de travail
+        </span>
+      </button>
+      <button class="custom-button" id="custom-button3">
+        <img src="Images/IconAttestationSalaire.png" alt="Icon" width="40" height="40" />
+        <span id="button-text">Demande d'une attestation de salaire</span>
+      </button>
+    </div>
+  </div>
+</body>
+  <script>
+    function redirectToNextPage(buttonText) {
+        window.location.href = 'RemplirAR.html?text=' + encodeURIComponent(buttonText);
+    }
+    var arabicButton = document.getElementById('custom-button1');
+    var arabicAudio = new Audio('rs/demandedefichedepaie.mp3');
+
+    arabicButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        arabicAudio.play();
+    });
+
+    arabicAudio.addEventListener('ended', function() {
+        setTimeout(function() {
+            redirectToNextPage('Demande de fiche de paie');
+        }, 2000); // Delay navigation by 1 second (1000 milliseconds)
+    });
+
+   var arabicButton1 = document.getElementById('custom-button2');
+    var arabicAudio1 = new Audio('rs/demandeattestationdetravail.mp3');
+
+    arabicButton1.addEventListener('click', function(event) {
+        event.preventDefault();
+        arabicAudio1.play();
+    });
+
+    arabicAudio1.addEventListener('ended', function() {
+        setTimeout(function() {
+            redirectToNextPage('Demande d’une attestation de travail');
+        }, 2000); // Delay navigation by 1 second (1000 milliseconds)
+    });
+
+   var arabicButton2 = document.getElementById('custom-button3');
+    var arabicAudio2 = new Audio('rs/demandeattestationdesalaire.mp3');
+
+    arabicButton2.addEventListener('click', function(event) {
+        event.preventDefault();
+        arabicAudio2.play();
+    });
+
+    arabicAudio2.addEventListener('ended', function() {
+        setTimeout(function() {
+            redirectToNextPage('Demande d'une attestation de salaire');
+        }, 2000); // Delay navigation by 1 second (1000 milliseconds)
+    });
+  
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+                <link rel="stylesheet" href="Bornestyle/styleindex.css">
+
+  </head>
+  <body>
+    <div id="video-container">
+      <video id="video-background" autoplay loop muted>
+        <source src="rs/Produce_0.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div id="content">
+        <!-- Add your image element here -->
+        <img id="moving-image" src="Images/TransparentLogo.png" alt="Moving Image" />
+
+        <!-- Add your button elements here -->
+        <div class="button-title">Borne CBS-RH</div>
+        <div class="button-subtext">
+          Demander les pièces administratives par simple clic.
+        </div>
+
+        <button class="custom-button" id="custom-button"  href="#">
+          <img src="Images/frdrapeau.png" alt="Icon" width="40" height="40" />
+          <span id="button-text">Francais</span>
+        </button>
+
+        <button class="custom-button" id="custom-buttonAR" href="#">
+          <img src="Images/tunisdrapeau.png" alt="Icon" width="40" height="40" />
+          <span id="button-text"> العربية </span>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    var arabicButton = document.getElementById('custom-buttonAR');
+    var arabicAudio = new Audio('rs/vousavezchoisilearabe.mp3');
+
+    arabicButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        arabicAudio.play();
+    });
+
+    arabicAudio.addEventListener('ended', function() {
+        setTimeout(function() {
+            window.location.href = 'MenuAR.html';
+        }, 1000); // Delay navigation by 1 second (1000 milliseconds)
+    });
+
+   var arabicButton1 = document.getElementById('custom-button');
+    var arabicAudio1 = new Audio('rs/vousavezchoisilefrancais.mp3');
+
+    arabicButton1.addEventListener('click', function(event) {
+        event.preventDefault();
+        arabicAudio1.play();
+    });
+
+    arabicAudio1.addEventListener('ended', function() {
+        setTimeout(function() {
+            window.location.href = 'MenuFR.html';
+        }, 1000); // Delay navigation by 1 second (1000 milliseconds)
+    });
+
+  
+</script>
+</html>

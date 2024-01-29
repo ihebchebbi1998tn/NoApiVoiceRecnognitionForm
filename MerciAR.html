@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+
+           <link rel="stylesheet" href="Bornestyle/stylemerciar.css">
+
+  </head>
+
+ <body>
+      <script>
+		// Wait for 7 seconds and then redirect to formulaire.html
+		setTimeout(function() {
+			window.location.href = 'index.html';
+		}, 7000);
+	</script>
+    <div id="video-container">
+        <video id="video-background" autoplay loop muted>
+            <source src="rs/thankspage.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    <audio src="rs/thankyou.mp3" autoplay></audio>
+
+        <div id="content">
+            <img id="moving-image" src="Images/TransparentLogo.png" alt="Moving Image" />
+            <a href="index.html">
+                <img id="moving-imageback" src="Images/back.png" alt="Moving Image" />
+            </a>
+      
+            
+           
+
+<div class="button-title">تم إستلام طلبكم </div>
+    </div>
+    
+     <div id="popup">
+    <h3> ....أنا أستمع</h3>
+    <video autoplay loop muted>
+      <source src="thankspage.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+   
+ <script>
+   // Play audio function
+        function playAudio(audio) {
+            audio.pause();
+            audio.currentTime = 0;
+            audio.play();
+        }
+</script>
+<script>
+  // Retrieve the text from the URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const name = urlParams.get('name');
+  const matricule = urlParams.get('matricule');
+  const year = urlParams.get('year');
+  const month = urlParams.get('month');
+  const buttonText = urlParams.get('text');
+
+  // Use the retrieved values as needed
+  console.log('Name:', name);
+  console.log('Matricule:', matricule);
+  console.log('Year:', year);
+  console.log('Month:', month);
+  console.log('Button Text:', buttonText);
+</script>
+
+
+</body>
+</html>
